@@ -1,0 +1,34 @@
+{
+  "name": "feed-my-sport",
+  "version": "1.0.0",
+  "description": "Base Style",
+  "main": "style.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bas",
+    "fms"
+  ],
+  "author": "Yoann Lorho",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-debug": "^2.1.2",
+    "gulp-cssfont64":"^0.0.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-inline-fonts": "^1.0.1",
+    "gulp-merge": "^0.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-concat":"^2.6.0",
+    "gulp-stream" :"^0.0.2",
+    "sprity": "^1.0.8",
+    "typescript":"^2.0.3",
+    "tslint" :"^3.15.1"
+  }
+}
