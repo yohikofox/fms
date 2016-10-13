@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["hero.css"],"sourcesContent":["/* Color set*/\nheader.navbar {\n  margin-bottom: 0; }\n  header.navbar a {\n    color: #000; }\n"],"file":"hero.css"}

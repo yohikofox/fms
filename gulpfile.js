@@ -10,9 +10,9 @@ var filter = require('gulp-filter');
 var debug = require('gulp-debug');
 var clean = require('gulp-clean');
 var cssfont64 = require('gulp-cssfont64');  
-
 var concat = require('gulp-concat');
-  var stream  = require('merge-stream');
+var stream  = require('merge-stream');
+var inlineSource = require('gulp-inline-source');
 
 
 var _config = {
@@ -139,12 +139,18 @@ gulp.task('default', ['sass'], function () {
     // gulp.watch(['*'], ['font']);
 });
 
+gulp.task('html-inline', ['minify'], function(){
+    return gulp.src('Views/*.html')
+    .pipe(inlineSource())
+    .pipe(gulp.dest(''))
+});
+
 
 // gulp.task('default-watch', [], function(){
 //     gulp.watch(['*.scss', '/lib/**/*.scss'], ['build-default']);
 // });
 
-gulp.task('build-default', ['minify']);
+gulp.task('build-default', ['html-inline']);
 
 // var styleguide = require('devbridge-styleguide');
 
