@@ -1,0 +1,4 @@
+open the folder in command line
+    > npm install
+    > npm install -g gulp
+    > npm install -g bower

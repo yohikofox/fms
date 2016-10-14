@@ -1,7 +1,164 @@
 /* Color set*/
-header.navbar {
-  margin-bottom: 0; }
-  header.navbar a {
-    color: #000; }
+/*Buttons*/
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+input {
+  line-height: normal; }
+
+.container, .jumbo-bar {
+  width: 1170px;
+  margin: auto; }
+
+.container-fluid, .main-container {
+  width: 100%;
+  margin: 0; }
+
+.jumbo-bar {
+  padding: 20px 0; }
+  .jumbo-bar .jumbo-container {
+    display: block;
+    width: 100%; }
+    .jumbo-bar .jumbo-container > div {
+      width: 30%; }
+    .jumbo-bar .jumbo-container div {
+      display: inline-block;
+      vertical-align: middle; }
+      .jumbo-bar .jumbo-container div.jumbo-pict div.jumbo-pict-frame {
+        margin-left: 20%;
+        width: 300px;
+        height: 300px; }
+        .jumbo-bar .jumbo-container div.jumbo-pict div.jumbo-pict-frame img {
+          width: inherit;
+          height: inherit; }
+      .jumbo-bar .jumbo-container div.jumbo-description {
+        margin-left: 30%; }
+        .jumbo-bar .jumbo-container div.jumbo-description span.jumbo-description-text {
+          font-size: 2.3em;
+          font-weight: 700; }
+        .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter {
+          margin-top: 10px;
+          font-size: 1.1em; }
+          .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857;
+            color: #555555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+            .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control:focus {
+              border-color: #66afe9;
+              outline: 0;
+              -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+            .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control::-moz-placeholder {
+              color: #787878;
+              opacity: 1; }
+            .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control:-ms-input-placeholder {
+              color: #787878; }
+            .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control::-webkit-input-placeholder {
+              color: #787878; }
+            .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control::-ms-expand {
+              border: 0;
+              background-color: transparent; }
+            .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control[disabled], .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control[readonly],
+            fieldset[disabled] .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control {
+              background-color: #eeeeee;
+              opacity: 1; }
+            .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control[disabled],
+            fieldset[disabled] .jumbo-bar .jumbo-container div.jumbo-description div.subscribe-newsletter .form-control {
+              cursor: not-allowed; }
+
+.button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 16px;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .button:focus, .button.focus, .button:active:focus, .button:active.focus, .button.active:focus, .button.active.focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+  .button:hover, .button:focus, .button.focus {
+    color: #66afe9;
+    text-decoration: none; }
+  .button:active, .button.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+  .button.disabled, .button[disabled],
+  fieldset[disabled] .button {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none; }
+
+.action {
+  color: #fff;
+  background-color: #ED3B3B;
+  border-color: #E8E8E8; }
+  .action:focus, .action.focus {
+    color: #fff;
+    background-color: #e01515;
+    border-color: #a8a8a8; }
+  .action:hover {
+    color: #fff;
+    background-color: #e01515;
+    border-color: #c9c9c9; }
+  .action:active, .action.active,
+  .open > .action.dropdown-toggle {
+    color: #fff;
+    background-color: #e01515;
+    border-color: #c9c9c9; }
+    .action:active:hover, .action:active:focus, .action:active.focus, .action.active:hover, .action.active:focus, .action.active.focus,
+    .open > .action.dropdown-toggle:hover,
+    .open > .action.dropdown-toggle:focus,
+    .open > .action.dropdown-toggle.focus {
+      color: #fff;
+      background-color: #c01212;
+      border-color: #a8a8a8; }
+  .action:active, .action.active,
+  .open > .action.dropdown-toggle {
+    background-image: none; }
+  .action.disabled:hover, .action.disabled:focus, .action.disabled.focus, .action[disabled]:hover, .action[disabled]:focus, .action[disabled].focus,
+  fieldset[disabled] .action:hover,
+  fieldset[disabled] .action:focus,
+  fieldset[disabled] .action.focus {
+    background-color: #ED3B3B;
+    border-color: #E8E8E8; }
+  .action .badge {
+    color: #ED3B3B;
+    background-color: #fff; }
 
 /*# sourceMappingURL=hero.css.map */

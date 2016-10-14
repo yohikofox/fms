@@ -10,6 +10,16 @@
 //     background-color: #1570A6;
 // }
 
+header{
+    &.navbar{
+        background-color: $fms-blue-color;
+        margin-bottom: 0; 
+        a{
+            color:$fms-dark-color;
+        }
+    }
+} 
+
 section.landing{
 
 section.what{

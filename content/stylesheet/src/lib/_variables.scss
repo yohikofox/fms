@@ -1,6 +1,40 @@
 /* Color set*/
-$fms-blue-color:#1570A6;
-$fms-red-color:#ED3B3B;
-$fms-light-color: #fff;
-$fms-dark-color:#000;
-$fms-light-grey-color:#E8E8E8;
+$fms-blue-color:#1570A6 !default;
+$fms-red-color:#ED3B3B !default;
+$fms-light-color: #fff !default;
+$fms-dark-color:#000 !default;
+$fms-light-grey-color:#E8E8E8 !default;
+$fms-webkit-default-blue-color:#66afe9 !default;
+
+$fms-gray-base:              #000 !default;
+$fms-gray-darker:            lighten($fms-gray-base, 13.5%) !default; // #222
+$fms-gray-dark:              lighten($fms-gray-base, 20%)   !default; // #333
+$fms-gray:                   lighten($fms-gray-base, 33.5%) !default; // #555
+$fms-gray-light:             lighten($fms-gray-base, 46.7%) !default; // #777
+$fms-gray-light-medium:      lighten($fms-gray-base, 46.9%) !default; //#999
+$fms-gray-lighter:           lighten($fms-gray-base, 93.5%) !default; // #eee
+
+
+$font-size-base:                       14px !default;
+$line-height-base:              1.428571429 !default; // 20/14
+$padding-base-vertical:                 6px !default;
+$padding-base-horizontal:              12px !default;
+$base-body-width:                    1170px !default;
+$border-radius-base:                    4px !default;
+$btn-font-weight:                      16px !default;                
+
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+$input-color:                     $fms-gray !default;
+$input-border-focus: $fms-webkit-default-blue-color !default;
+$input-bg:                       #fff !default;
+$input-bg-disabled:              $fms-gray-lighter !default;
+$input-border:                   #ccc !default;
+$input-border-radius:            $border-radius-base !default;
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-color-placeholder:         $fms-gray-light-medium !default;
+
+$cursor-disabled:                not-allowed !default;
+
+$btn-border-radius-base:  $border-radius-base !default;
+$btn-default-color: $fms-webkit-default-blue-color !default;

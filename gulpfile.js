@@ -1,4 +1,3 @@
-// Sass configuration
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
@@ -13,18 +12,21 @@ var cssfont64 = require('gulp-cssfont64');
 var concat = require('gulp-concat');
 var stream  = require('merge-stream');
 var inlineSource = require('gulp-inline-source');
+var handlebars = require('gulp-static-handlebars');
+var handlebarsHelper = require('gulp-handlebars-all');
+var htmlMinifier = require('gulp-html-minifier');
+var image = require('gulp-image');
 
-
+/*=====================================================================================Begin Configuration*/
 var _config = {
     distribRoot: 'dist',
     distribFont: '/fonts/',
     fontDestRoot: 'content/fonts',
-    srcScss: ['content/stylesheet/src/*.scss'],
+    handlebarsPageRoot: 'Views/handlebars/*.hbs',
+    srcScss: ['content/stylesheet/src/**/*.scss'],
     libSrc: ["content/stylesheet/src/lib/**/"],
-    minSrc: ['[x0]/*.css', '![x0]/*.min.css']
-};
-
-var _fontConfiguration ={
+    minSrc: ['[x0]/*.css', '![x0]/*.min.css'],
+    fontConfiguration : {
         name:'text-font',
         rootPath:'ext/helvetica-neue/',
         configurationList: [
@@ -49,111 +51,145 @@ var _fontConfiguration ={
                 }
             }
         ]
-    };
-
-var  _fontPictoConfig =     
-{
-    name:'picto-font',
-    rootPath:'bower_components/Font-Awesome/fonts/',
-    configurationList: [
-        {
-            fileName:'*',
-            options:{
-                name:'FontAwesome',
-                style: 'normal',
-                weight: 'normal',
-                formats: ['woff', 'woff2','eot','svg'] // also supported: 'ttf', 'eot', 'otf', 'svg'
+    },
+    fontPictoConfig :{
+        name:'picto-font',
+        rootPath:'bower_components/Font-Awesome/fonts/',
+        configurationList: [
+            {
+                fileName:'*',
+                options:{
+                    name:'FontAwesome',
+                    style: 'normal',
+                    weight: 'normal',
+                    formats: ['woff', 'woff2','eot','svg'] // also supported: 'ttf', 'eot', 'otf', 'svg'
+                }
             }
-        }
-    ]
+        ]
+    }
 };
 
-var noPartials = function (file) {
-    var path = require('path');
-    var dirSeparator = path.sep.replace('\\', '\\\\');
-    var relativePath = path.relative(process.cwd(), file.path);
-    return !new RegExp('(^|' + dirSeparator + ')_').test(relativePath);
+/*=====================================================================================End Configuration*/
+
+/*=====================================================================================Begin helpers*/
+
+var helpers = {
+    getMinifySource : function(config){
+        var result = [];
+        config.minSrc.forEach(function(item){
+            result.push(item.replace('[x0]', _config.distribRoot))
+        });
+        return result;
+    },
+
+    noPartials : function (file) {
+        var path = require('path');
+        var dirSeparator = path.sep.replace('\\', '\\\\');
+        var relativePath = path.relative(process.cwd(), file.path);
+        return !new RegExp('(^|' + dirSeparator + ')_').test(relativePath);
+    },
+
+    fontFunction : function (it) {       
+        var strm = stream();
+        var libName =it.name;   
+
+        it.configurationList.forEach(function(conf){            
+            console.log(conf);
+            strm.add(gulp.src(it.rootPath + conf.fileName)
+                .pipe(debug({ title:'debug - '+ it.name }))
+                .pipe(inlineFonts(conf.options)));
+        });
+        
+        strm.pipe(concat(libName + '.css')).pipe(gulp.dest(_config.fontDestRoot));
+
+    return strm.isEmpty();
+    }
 };
 
+
+
+/*=====================================================================================End helpers*/
+
+/*=====================================================================================Begin tasks*/
 gulp.task('clear', function () {
     return gulp.src(_config.distribRoot, { read: false, force: true })
     .pipe(debug({ title: 'debug-clean' }))
     .pipe(clean());
 });
 
-var fontFunction = function (it) {       
-    var strm = stream();
-    var libName =it.name;
-    
+gulp.task('image', function () {
+  gulp.src('ext/images/*')
+    .pipe(image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      jpegRecompress: false,
+      jpegoptim: true,
+      mozjpeg: true,
+      gifsicle: true,
+      svgo: true,
+      concurrent: 10
+    }))
+    .pipe(gulp.dest('content/images'));
+});
 
-    it.configurationList.forEach(function(conf){            
-        console.log(conf);
-        strm.add(gulp.src(it.rootPath + conf.fileName)
-            .pipe(debug({ title:'debug - '+ it.name }))
-            .pipe(inlineFonts(conf.options)));
-    });
-    
-    strm.pipe(concat(libName + '.css')).pipe(gulp.dest(_config.fontDestRoot));
-
-   return strm.isEmpty();
-};
-
-//
 gulp.task('picto',['font'], function(){
-    fontFunction(_fontPictoConfig);
+    helpers.fontFunction(_config.fontPictoConfig);
 });
 gulp.task('font', function(){
-    fontFunction(_fontConfiguration);
+    helpers.fontFunction(_config.fontConfiguration);
 });
 
-gulp.task('sass',['clear','picto'], function () {
+gulp.task('sass',['clear'], function () {
     return gulp.src(_config.srcScss)//, '/**/*.scss'
     .pipe(debug({ title: 'debug-transpileSassTask' }))
     .pipe(sass({includePaths:_config.libSrc}))
     .pipe(sourcemaps.init())
-    .pipe(filter(noPartials))
+    .pipe(filter(helpers.noPartials))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(_config.distribRoot));
 });
 
-var getMinifySource = function(config){
-    var result = [];
-    config.minSrc.forEach(function(item){
-        result.push(item.replace('[x0]', _config.distribRoot))
-    });
-    return result;
-};
-
-gulp.task('minify', ['clear','picto', 'sass'], function () {
-    return gulp.src(getMinifySource(_config))
+gulp.task('minify', ['sass'], function () {
+    return gulp.src(helpers.getMinifySource(_config))
     .pipe(debug({ title: 'debug-minifyCssTask' }))
     .pipe(cleanCSS())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['sass'], function () {
-    gulp.watch(_config.srcScss, ['minify']);
-    // gulp.watch(getMinifySource(_config), ['minify']);
-    // gulp.watch(['*'], ['picto']);
-    // gulp.watch(['*'], ['font']);
+gulp.task('handlebars',['minify'], function(){
+    return gulp.src(_config.handlebarsPageRoot)
+    .pipe(handlebarsHelper('html', {
+        partials:['Views/handlebars/partials/*.hbs']
+    }))
+    .pipe(rename(function (path) {
+        path.extname = ".html"
+    }))
+    .pipe(htmlMinifier({collapseWhitespace: true,removeComments:true}))
+    .pipe(gulp.dest('Views/compiled'));
 });
 
-gulp.task('html-inline', ['minify'], function(){
-    return gulp.src('Views/*.html')
-    .pipe(inlineSource())
+gulp.task('html-inline', ['handlebars'], function(){
+    var options = {
+        compress: true
+    };
+
+    return gulp.src('Views/compiled/*.html')
+    .pipe(inlineSource(options))
     .pipe(gulp.dest(''))
 });
+/*=====================================================================================End tasks*/
 
+/*=====================================================================================Begin Main Tasks*/
 
-// gulp.task('default-watch', [], function(){
-//     gulp.watch(['*.scss', '/lib/**/*.scss'], ['build-default']);
-// });
+gulp.task('build-default', ['image','picto','html-inline']);
 
-gulp.task('build-default', ['html-inline']);
-
-// var styleguide = require('devbridge-styleguide');
-
-// gulp.task('start-styleguide', function () {
-//   styleguide.startServer();
-// });
+/*=====================================================================================Begin Main Tasks*/
+gulp.task('default', ['sass'], function () {
+    var watchSource = [
+        _config.srcScss,
+        'Views/**/*.hbs'
+    ];
+    gulp.watch(watchSource, ['html-inline']);
+});

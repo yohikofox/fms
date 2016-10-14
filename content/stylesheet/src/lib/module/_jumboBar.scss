@@ -1,0 +1,155 @@
+$squared-pict-frame:300px;
+
+.main-container{
+    @extend .container-fluid;
+    // background-color: $fms-blue-color;
+}
+
+.jumbo-bar{
+    @extend .container;
+    padding:20px 0; 
+    .jumbo-container{
+        display: block;
+        // position: fixed;
+        width:100%;
+        > div{
+            width: 30%;
+        }
+        div{
+            display: inline-block;
+            vertical-align: middle;
+            &.jumbo-pict{               
+                div{               
+                    &.jumbo-pict-frame{               
+                        margin-left:20%; 
+                        width:$squared-pict-frame;
+                        height: $squared-pict-frame;
+                        // border: 1px $fms-light-grey-color solid;
+                        img{
+                            width: inherit;
+                            height:inherit;                                        
+                        }
+                    }           
+                }
+            }
+
+            &.jumbo-description{
+                margin-left:30%;
+                span.jumbo-description-text{
+                    font-size: 2.3em;
+                    font-weight: 700;
+                }
+                div.subscribe-newsletter{
+                    margin-top: 10px;
+                    font-size:1.1em;
+                    
+                    .form-control{                        
+                        display: block;
+                        width: 100%;
+                        height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+                        padding: $padding-base-vertical $padding-base-horizontal;
+                        font-size: $font-size-base;
+                        line-height: $line-height-base;
+                        color: $input-color;
+                        background-color: $input-bg;
+                        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+                        border: 1px solid $input-border;
+                        border-radius: $input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+                        @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+                        @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+                        // Customize the `:focus` state to imitate native WebKit styles.
+                        @include form-control-focus;
+
+                        // Placeholder
+                        @include placeholder;
+
+                        // Unstyle the caret on `<select>`s in IE10+.
+                        &::-ms-expand {
+                            border: 0;
+                            background-color: transparent;
+                        }
+
+                        // Disabled and read-only inputs
+                        //
+                        // HTML5 says that controls under a fieldset > legend:first-child won't be
+                        // disabled if the fieldset is disabled. Due to implementation difficulty, we
+                        // don't honor that edge case; we style them as disabled anyway.
+                        &[disabled],
+                        &[readonly],
+                        fieldset[disabled] & {
+                            background-color: $input-bg-disabled;
+                            opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+                        }
+
+                        &[disabled],
+                        fieldset[disabled] & {
+                            cursor: $cursor-disabled;
+                        }
+
+                        // [converter] extracted textarea& to textarea.form-control
+                    }                    
+                }
+            }
+        }     
+    }
+}
+
+.button {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+  @include user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      @include tab-focus;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+
+  // [converter] extracted a& to a.btn
+}
+ 
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  }
+}
+
+.action {
+    @include button-variant($fms-light-color, $fms-red-color, $fms-light-grey-color);
+}
