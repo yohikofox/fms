@@ -5,6 +5,7 @@ $fms-light-color: #fff !default;
 $fms-dark-color:#000 !default;
 $fms-light-grey-color:#E8E8E8 !default;
 $fms-webkit-default-blue-color:#66afe9 !default;
+$fms-light-blue-color:#5bc0de;
 
 $fms-gray-base:              #000 !default;
 $fms-gray-darker:            lighten($fms-gray-base, 13.5%) !default; // #222
@@ -14,10 +15,12 @@ $fms-gray-light:             lighten($fms-gray-base, 46.7%) !default; // #777
 $fms-gray-light-medium:      lighten($fms-gray-base, 46.9%) !default; //#999
 $fms-gray-lighter:           lighten($fms-gray-base, 93.5%) !default; // #eee
 
+$fms-red-color-darker: darken($fms-red-color, 5%) !default;
+$fms-light-blue-color-darker: darken($fms-light-blue-color, 5%) !default;
 
 $font-size-base:                       14px !default;
 $line-height-base:              1.428571429 !default; // 20/14
-$padding-base-vertical:                 6px !default;
+$padding-base-vertical:                 6px !default; 
 $padding-base-horizontal:              12px !default;
 $base-body-width:                    1170px !default;
 $border-radius-base:                    4px !default;
@@ -31,7 +34,7 @@ $input-bg:                       #fff !default;
 $input-bg-disabled:              $fms-gray-lighter !default;
 $input-border:                   #ccc !default;
 $input-border-radius:            $border-radius-base !default;
-$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 1) !default;
 $input-color-placeholder:         $fms-gray-light-medium !default;
 
 $cursor-disabled:                not-allowed !default;

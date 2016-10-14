@@ -1,0 +1,42 @@
+.what{
+    @extend .container;
+    
+    .title{
+        margin-bottom:40px;
+
+        h3{
+            color:$fms-red-color;        
+        }
+        p{
+            font-size:1.3em;
+        }
+        h3, p{
+            text-align: center;
+            font-weight: bold; 
+        }
+    }
+}
+
+.bullet-container{
+    // width:100%;    
+}
+.bullet{ 
+    display: inline-block;    
+    vertical-align: middle;
+    text-align: center;
+    width:50%;
+    margin:0;
+    position:relative;
+    img{
+        width: 350px;
+    }
+    .thumbnail-subtitle{
+        font-size:1.2em;
+        .pill{
+            background-color:$fms-red-color;
+            border-radius: 22px;
+            padding:6px 12px;
+            margin-bottom:3px;
+        }
+    } 
+}

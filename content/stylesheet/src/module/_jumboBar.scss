@@ -1,0 +1,54 @@
+$squared-pict-frame:300px;
+
+.main-container{
+    @extend .container-fluid;
+    background-color: $fms-blue-color;
+}
+
+.jumbo-bar{
+    @extend .container;
+    padding:20px 0; 
+    .jumbo-container{
+        display: block;
+        // position: fixed;
+        width:100%;
+        div{
+            
+            display: inline-block;
+            vertical-align: middle;
+            &.jumbo-pict{
+                width:30%;               
+                div{               
+                    &.jumbo-pict-frame{               
+                        margin-left:20%; 
+                        width:$squared-pict-frame;
+                        height: $squared-pict-frame;
+                        // border: 1px $fms-light-grey-color solid;
+                        img{
+                            width: inherit;
+                            height:inherit;                                        
+                        }
+                    }           
+                }
+            }
+ 
+            &.jumbo-description{
+                width:50%;
+                margin-left:20%;
+                .jumbo-description-text{
+                    font-size: 2.0em;
+                    font-weight: 700;
+                    color: $fms-light-color;
+                }
+                .subscribe-newsletter{
+                    color: $fms-light-color;
+                    // margin-top: 30px;
+                    font-size:1.1em;         
+                    input.form-control{
+                        // width: 70%;
+                    }                            
+                }
+            }
+        }     
+    }
+}
