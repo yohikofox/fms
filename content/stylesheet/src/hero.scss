@@ -1,7 +1,10 @@
-@import "lib/variables";
-@import "lib/mixins";
+@import "lib/base";
 @import "module/base-components";
 @import "module/boiler";
 @import "module/jumboBar";
 @import "module/bullet";
+// @import "module/navbar";
+@import "module/nav";
 
+@import "module/social"; 
+@import "module/team"; 

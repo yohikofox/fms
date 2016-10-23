@@ -1,0 +1,40 @@
+.who{
+    @extend .container;
+    .team-container{
+        
+        position:relative;
+        display: inline-block;
+        vertical-align: middle;
+
+        div{
+            display: inline-block;
+        }
+
+        .team-item{
+            width:49%;
+            height: 320px;
+            margin-left:1%;
+            padding:12px;
+            border:1px solid $fms-gray-lighter;           
+           
+            .team-civ{
+                 .team-pict{
+                    img{
+                        width:100px; 
+                        height: 122px;
+                    }
+                }
+                .team-info{
+                    display: flex; /* contexte sur le parent */
+                    flex-direction: column; /* direction d'affichage verticale */
+                    justify-content: center; /* alignement vertical */
+
+                    label{
+                        font-weight: bold;
+                        padding-right:5px;
+                    }
+                }                   
+            }
+        }
+    }
+}

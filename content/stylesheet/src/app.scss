@@ -28,7 +28,7 @@ section.what{
         text-align: center;
         //  font-family:  Arial, Helvetica, sans-serif;
         margin-bottom: 20px;
-        color:$fms-red-color;
+        color:$fms-sub-highlight;
         font-weight: normal;
     }
     .thumbnail-subtitle{
@@ -36,7 +36,7 @@ section.what{
         text-align: center;
 
         .pill{
-            background-color: $fms-red-color;
+            background-color: $fms-sub-highlight;
             color:$fms-light-color;
             padding : 7px 15px;
             border-radius: 65px ;
@@ -167,7 +167,7 @@ section.what{
                     font-size: 4.2em;
 
                     .suffix{
-                        color:$fms-red-color;
+                        color:$fms-sub-highlight;
                         // font-size: .5em;
                         font-weight: bold;
                     }

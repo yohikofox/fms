@@ -1,20 +1,5 @@
 .what{
     @extend .container;
-    
-    .title{
-        margin-bottom:40px;
-
-        h3{
-            color:$fms-red-color;        
-        }
-        p{
-            font-size:1.3em;
-        }
-        h3, p{
-            text-align: center;
-            font-weight: bold; 
-        }
-    }
 }
 
 .bullet-container{
@@ -32,11 +17,31 @@
     }
     .thumbnail-subtitle{
         font-size:1.2em;
+        .title{
+            margin-top:20px;
+        }
         .pill{
-            background-color:$fms-red-color;
+            background-color:$fms-sub-highlight;
+            color:$fms-light-font;
             border-radius: 22px;
             padding:6px 12px;
             margin-bottom:3px;
         }
     } 
 }
+
+.title{
+        margin-bottom:40px;
+
+        h3{
+            color:$fms-sub-highlight;
+            font-size:2.9em;         
+        }
+        p{
+            font-size:1.3em;
+        } 
+        h3, p{
+            text-align: center;
+            font-weight: bold; 
+        }
+    }

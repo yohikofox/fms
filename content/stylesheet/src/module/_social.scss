@@ -1,0 +1,32 @@
+.whatsup{
+
+    @extend .container-fluid;
+     background-color: $fms-blue-color;
+     background-image: url('content/images/pictograms-blue.png');
+
+     height: 700px;
+
+     .title{
+         h3{
+             color:$fms-light-font;
+         }
+     }
+
+    .social-container{
+
+        @extend .container;
+
+        .feed-row{
+
+            position:relative;
+            display: inline-block;
+            width:100%;
+
+            .social-feed{
+                position:relative;
+                display: inline-block;
+                margin-left:5%;    
+            } 
+        }         
+    }   
+} 

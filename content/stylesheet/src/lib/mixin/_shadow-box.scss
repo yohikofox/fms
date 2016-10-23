@@ -1,0 +1,7 @@
+@mixin shadow($vars, $color){
+    -moz-box-shadow: $vars $color;
+    -webkit-box-shadow: $vars $color;
+    -o-box-shadow: $vars $color;
+    box-shadow: $vars $color;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=134, Strength=5);
+}

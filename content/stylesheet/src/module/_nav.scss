@@ -1,2 +1,64 @@
 @import "lib/variables";
 
+header {    
+    &.navbar{
+        // position: relative;
+        // min-height: 50px;
+        // margin-bottom: 20px;
+        // border: 1px solid transparent;  
+       
+        .navbar{
+            @extend .container;
+        }
+        .nav-container{
+            @extend .container-fluid;
+            background-color: $fms-white-color;
+            @include shadow(0px 1px 3px 0px, $fms-gray-light-medium);
+            position:fixed;
+            z-index: 10;            
+        }
+        
+        nav {
+            
+            margin-right: 0;
+            margin-left: 0;
+            padding-right: 0;
+            padding-left: 0;
+            ul{
+                list-style: none;
+                &.nav{
+                    display: inline-block;
+                    position: relative;
+                    vertical-align: middle;
+                    // width: 100%;
+                }
+                 
+                li{
+                    display: inline;
+                    text-align: center;
+                    vertical-align: middle;
+                    padding: 2px 30px;
+                    margin: 0;
+                    .logo{
+                        display: inline-block;   
+                        font-size: 1.4em;
+                        font-weight: bold;
+                    }
+                    a{
+                        text-decoration: none;
+                        color:$fms-dark-color; 
+                        font-size:22px;
+                        img {
+                            height:25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-right{
+            position:absolute;
+            float: right;
+        }
+    }
+}

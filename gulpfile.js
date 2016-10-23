@@ -28,25 +28,35 @@ var _config = {
     minSrc: ['[x0]/*.css', '![x0]/*.min.css'],
     fontConfiguration : {
         name:'text-font',
-        rootPath:'ext/helvetica-neue/',
+        rootPath:'ext/',
         configurationList: [
+            // {
+            //     name:'yolo',
+            //     fileName:'helvetica-neue/HelveticaNeue-400.woff',
+            //     options:{
+            //         name:'helvetica',
+            //         style: 'normal',
+            //         weight: 'normal',
+            //         formats: ['woff'] // also supported: 'ttf', 'eot', 'otf', 'svg'
+            //     }
+            // },
+            // {
+            //     name:'yolo',
+            //     fileName:'helvetica-neue/HelveticaNeue-700.woff',
+            //     options:{
+            //         name:'helvetica',
+            //         style: 'normal',
+            //         weight: 'bold',
+            //         formats: ['woff'] // also supported: 'ttf', 'eot', 'otf', 'svg'
+            //     }
+            // },
             {
                 name:'yolo',
-                fileName:'HelveticaNeue-400.woff',
+                fileName:'SourceSansPro/*',
                 options:{
                     name:'font',
                     style: 'normal',
                     weight: 'normal',
-                    formats: ['woff'] // also supported: 'ttf', 'eot', 'otf', 'svg'
-                }
-            },
-            {
-                name:'yolo',
-                fileName:'HelveticaNeue-700.woff',
-                options:{
-                    name:'font',
-                    style: 'normal',
-                    weight: 'bold',
                     formats: ['woff'] // also supported: 'ttf', 'eot', 'otf', 'svg'
                 }
             }
@@ -172,7 +182,7 @@ gulp.task('handlebars',['minify'], function(){
 
 gulp.task('html-inline', ['handlebars'], function(){
     var options = {
-        compress: true
+        compress: false
     };
 
     return gulp.src('Views/compiled/*.html')
@@ -183,7 +193,7 @@ gulp.task('html-inline', ['handlebars'], function(){
 
 /*=====================================================================================Begin Main Tasks*/
 
-gulp.task('build-default', ['image','picto','html-inline']);
+gulp.task('build-default', ['image','font','picto','html-inline']);
 
 /*=====================================================================================Begin Main Tasks*/
 gulp.task('default', ['sass'], function () {

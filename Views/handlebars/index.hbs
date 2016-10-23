@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        {{> _facebook}}            
         <title>FeedMySport.com</title>
         <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" ><link>
         <link rel="stylesheet" href="../../dist/hero.min.css" type="text/css" inline ></link>
-    </head>    
-    <body>
-        <!--<header class="navbar navbar-static-top" id="top"> 
-        {{> _nav}}   
-        </header>    -->
-        <section class="main-container">
+        <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    </head>     
+    <body>    
+        {{> _nav}}    
+        <script type="text/javascript">
+            (
+                function(){
+                    $('ul.nav li a').on('click', function(e){
+                        e.preventDefault();
+                        var $this = $(this);
+                        var speed =1000,
+                            offset=80;                   
+
+                        var target = $this.attr('href');
+                        var val = $(target).offset().top ;
+                        if(val > 2 * offset ){
+                            val -= offset;
+                        }
+                        $('html, body').animate({
+                            scrollTop: val
+                        }, speed);
+                    });                    
+                }
+            )();
+        </script>    
+        <section >
+            <div class="main-container">
             <div class="jumbo-bar">               
-                <div class="jumbo-container">                    
+                <div class="jumbo-container">                   
                     {{> _jumboPict}}   
                     {{> _jumboDescription}}
                 </div>
             </div>            
-        </section>     
-        <section>
-            {{> _sectionWhat}}
-            <!--{{> _sectionWho}}-->
+            </div>         
+            <script type="text/javascript">
+                (
+                    function(window, undefined, $){
+                        var $form = $('#nl-form'),
+                            $btn = $('#email-button'), 
+                            $email=$('input[name="email"]');
+                        $btn.on('click',function(){
+                             var link = "mailto:hello@feedmysport.com"
+                                        + "&subject=" + escape("Inscription courriel")
+                                        + "&body=" + escape("Je souhaite suivre l'aventure www.feedmysport.com.'")
+                                ;
+
+                            window.location.href = link;   
+                        });  
+                    }    
+                )(window,undefined,$);
+            </script>   
+        </section>      
+        <section style="margin-bottom:70px;"> 
+            {{> _sectionWhat}} 
+            {{> _sectionWhatsup}} 
+            {{> _sectionWho}}         
         </section>
-        <!--<footer class="fixed-footer container-fluid"> 
-            <div class="col-lg-2">
-                <a target="_blank" href="https://www.facebook.com/feedmysport" class="footer-link">
-                    <img src="content/images/facebook-page.png" alt="Venez nous soutenir sur Facebook">
-                </a>    
-            </div>
-        </footer>   -->
+        <footer class="container-fluid"> 
+            	&copy;FeedMySport - 2016
+        </footer>   
     </body>    
 </html>
-<!--<link href="dist/app.css" rel="stylesheet">
-<link href="dist/style.css" rel="stylesheet">-->
