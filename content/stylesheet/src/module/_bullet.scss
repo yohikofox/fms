@@ -1,5 +1,5 @@
 .what{
-    @extend .container;
+    @include container;
 }
 
 .bullet-container{
@@ -17,6 +17,7 @@
     }
     .thumbnail-subtitle{
         font-size:1.2em;
+        margin-top:30px;
         .title{
             margin-top:20px;
         }
@@ -29,19 +30,3 @@
         }
     } 
 }
-
-.title{
-        margin-bottom:40px;
-
-        h3{
-            color:$fms-sub-highlight;
-            font-size:2.9em;         
-        }
-        p{
-            font-size:1.3em;
-        } 
-        h3, p{
-            text-align: center;
-            font-weight: bold; 
-        }
-    }

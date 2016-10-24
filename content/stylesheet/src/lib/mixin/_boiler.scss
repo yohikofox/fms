@@ -1,0 +1,10 @@
+@mixin container{
+    width:$base-body-width;
+    margin:auto;
+}
+
+@mixin container-fluid{
+    width:100%;
+    margin:0;
+}
+

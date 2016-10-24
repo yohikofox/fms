@@ -1,4 +1,4 @@
-@mixin shadow($vars, $color){
+@mixin shadow-box($vars, $color){
     -moz-box-shadow: $vars $color;
     -webkit-box-shadow: $vars $color;
     -o-box-shadow: $vars $color;

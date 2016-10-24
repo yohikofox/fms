@@ -1,5 +1,3 @@
-@import "lib/variables";
-
 header {    
     &.navbar{
         // position: relative;
@@ -8,12 +6,12 @@ header {
         // border: 1px solid transparent;  
        
         .navbar{
-            @extend .container;
+            @include container;
         }
         .nav-container{
-            @extend .container-fluid;
+            @include container-fluid;
             background-color: $fms-white-color;
-            @include shadow(0px 1px 3px 0px, $fms-gray-light-medium);
+            @include shadow-box(0px 1px 3px 0px, $fms-gray-light-medium);
             position:fixed;
             z-index: 10;            
         }
@@ -27,7 +25,7 @@ header {
             ul{
                 list-style: none;
                 &.nav{
-                    display: inline-block;
+                    display: inline-block; 
                     position: relative;
                     vertical-align: middle;
                     // width: 100%;

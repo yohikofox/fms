@@ -1,5 +1,5 @@
 .who{
-    @extend .container;
+    @include container;
     .team-container{
         
         position:relative;
@@ -18,6 +18,7 @@
             border:1px solid $fms-gray-lighter;           
            
             .team-civ{
+                display: block;
                  .team-pict{
                     img{
                         width:100px; 
@@ -25,15 +26,27 @@
                     }
                 }
                 .team-info{
-                    display: flex; /* contexte sur le parent */
-                    flex-direction: column; /* direction d'affichage verticale */
-                    justify-content: center; /* alignement vertical */
+                    position: absolute;
+                    top:60px;
+                    margin-left:12px;
+                    // display: flex; /* contexte sur le parent */
+                    // flex-direction: column; /* direction d'affichage verticale */
+                    // justify-content: center; /* alignement vertical */
 
                     label{
                         font-weight: bold;
                         padding-right:5px;
                     }
-                }                   
+                }      
+                .team-bullet{
+                    label{
+                        font-weight: bold;
+                        margin-left:5px;
+                    }
+                    position: absolute;
+                    top:25px;
+                    margin-left:252px;
+                }       
             }
         }
     }

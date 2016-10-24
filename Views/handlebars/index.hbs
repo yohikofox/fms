@@ -5,8 +5,11 @@
         <title>FeedMySport.com</title>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" ><link>
+        <link rel="stylesheet" href="../../dist/picto.min.css" type="text/css" inline ></link>
         <link rel="stylesheet" href="../../dist/hero.min.css" type="text/css" inline ></link>
+        <link rel="stylesheet" href="dist/app.min.css" type="text/css" ></link>
         <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <script  src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     </head>     
     <body>    
         {{> _nav}}    
@@ -16,17 +19,18 @@
                     $('ul.nav li a').on('click', function(e){
                         e.preventDefault();
                         var $this = $(this);
-                        var speed =1000,
-                            offset=80;                   
+                        var speed =800;
 
-                        var target = $this.attr('href');
-                        var val = $(target).offset().top ;
+                        var $target = $($this.attr('href'));
+                        var offset= $target.data('offset');     
+                        
+                        var val = $target.offset().top ;
                         if(val > 2 * offset ){
                             val -= offset;
                         }
                         $('html, body').animate({
                             scrollTop: val
-                        }, speed);
+                        }, speed,'easeInOutQuad');
                     });                    
                 }
             )();

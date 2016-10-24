@@ -1,0 +1,47 @@
+@import url(/content/fonts/picto-font.css);
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fms {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.fms-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%; }
+
+.fms-2x {
+  font-size: 2em; }
+
+.fms-3x {
+  font-size: 3em; }
+
+.fms-4x {
+  font-size: 4em; }
+
+.fms-5x {
+  font-size: 5em; }
+
+.fms-6x {
+  font-size: 6em; }
+
+.fms-7x {
+  font-size: 7em; }
+
+.fms-search:before {
+  content: "\f002"; }
+
+.fms-money:before {
+  content: "\f0d6"; }
+
+.fms-bicycle:before {
+  content: "\f206"; }
+
+.fms-tachometer:before {
+  content: "\f0e4"; }
+
+/*# sourceMappingURL=picto.css.map */

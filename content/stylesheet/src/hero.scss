@@ -1,10 +1,7 @@
-@import "lib/base";
-@import "module/base-components";
+@import "module/base";
 @import "module/boiler";
+@import "module/base-components";
+@import "module/nav"; 
 @import "module/jumboBar";
 @import "module/bullet";
 // @import "module/navbar";
-@import "module/nav";
-
-@import "module/social"; 
-@import "module/team"; 
