@@ -40,7 +40,8 @@
   .who .team-container {
     position: relative;
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle;
+    width: 100%; }
     .who .team-container div {
       display: inline-block; }
     .who .team-container .team-item {
@@ -68,5 +69,14 @@
           .who .team-container .team-item .team-civ .team-bullet label {
             font-weight: bold;
             margin-left: 5px; }
+      .who .team-container .team-item .team-desc {
+        position: absolute;
+        width: 400px; }
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eeeeee; }
 
 /*# sourceMappingURL=app.css.map */

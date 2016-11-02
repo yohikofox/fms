@@ -1,0 +1,148 @@
+body{
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.fms{
+    color:#000 !important;
+    margin-bottom:10px;
+}
+
+@import "lib/variables";
+@import "lib/mixins";
+@import "bootstrap/nav";
+
+.jumbo-container{
+     height: 100%;
+}
+.jumbo-bar{
+    background-color: $fms-blue-color;
+    background-image: url('content/images/header.jpg');
+    background-size:100%;
+    background-repeat: no-repeat;
+    margin-top:-20px;
+    height: $header-height;
+   
+    //  background-size: cover;
+    // background-position-y: -270px; 
+
+
+    .jumbo-description{
+         display: table;
+          height: 100%;
+            
+        h1{
+            font-size: 3.5em;
+            @media screen and (max-width: 480px) {
+                font-size: 1.7em;
+            }
+        }
+
+        .jumbo-description-container{
+            display: table-cell;            
+            vertical-align: middle;
+            
+            
+            .jumbo-description-padding{
+                padding : 20px;
+                background-color:rgba(0, 0, 0, 0.45);
+                border-radius: 8px;
+                @include shadow-box(5px 5px 32px, #111);
+                color:$fms-white-color;
+
+                
+            }
+        }
+    }
+}
+
+    .pill{
+            background-color:$fms-sub-highlight;
+            color:$fms-light-font;
+            border-radius: 22px;
+            padding:6px 12px;
+            margin-bottom:3px;
+        }
+
+        .bullet{
+            font-size:1.3em;
+            .thumbnail-subtitle{
+                padding-bottom:5px;
+            }
+            .title{
+                margin-top:14px;
+            }
+        }
+
+        .title{
+        margin-bottom:40px;
+        color:#000;
+
+        h3{
+            color:#000 !important;//$fms-sub-highlight
+            font-size:2.5em;         
+        }
+        p{
+            font-size:1.3em;
+        } 
+        h3, p{
+            text-align: center;
+            font-weight: bold; 
+        }
+    }
+
+
+    .whatsup{
+
+     background-color: $fms-blue-color;
+     background-image: url('content/images/pictograms-blue.png');
+
+     .title{
+         padding-top:20px;
+         
+         h3{
+             color:#fff !important;
+         }
+     }
+
+    .social-container{
+padding-bottom:2%;
+        // .feed-row{
+
+        //     position:relative;
+        //     display: inline-block;
+        //     width:100%; 
+
+        //     .social-feed{
+        //         position:relative;
+        //         display: inline-block;
+        //         margin-left:5%;    
+        //     } 
+        // }         
+    }   
+} 
+
+.who{
+    background-color:#e8e8e8;
+    min-height: 450px;
+}
+.team-item{
+    background-color: #fff;
+    border:1px solid #d6d6d6;
+    height: 320px;
+    padding:12px;
+}
+.team-container{
+    height: 400px;
+}
+
+footer{
+    .trademark{
+        color:#fff;
+    }
+    height:200px;
+    background-color:#222;
+    .footer-center{
+        display: flex;
+    }
+    
+}

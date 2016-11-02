@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><div id="fb-root"></div><script type="text/javasript">(
+                function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    
+                    if (d.getElementById(id)) return;
+                    
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=200280557076971";
+                    
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk')
+            );</script><title>FeedMySport.com</title><meta charset="UTF-8"><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"><link><link rel="stylesheet" href="../../dist/picto.min.css" type="text/css" inline><link rel="stylesheet" href="../../dist/hero.min.css" type="text/css" inline><link rel="stylesheet" href="dist/app.min.css" type="text/css"><script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script></head><body><div class="navbar"><nav class="navbar navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">FeedMySport.com</a></div><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="#what">Le Concept</a></li><li><a href="#whatsup">L'Actualité</a></li><li><a href="#who">La Team</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://www.facebook.com/feedmysport" class="image-link" target="_blank"><img src="content/images/facebook-page.png" height="25" alt="Venez nous soutenir sur Facebook"></a></li></ul></div></div></nav></div><script type="text/javascript">(
+                function(){
+                    $('ul.nav li a:not(".image-link")').on('click', function(e){
+                        e.preventDefault();
+                        var $this = $(this); 
+                        var speed =800,
+                        windowHeight = $(window).height();
+
+                        var $target = $($this.attr('href'));                                                
+                       
+
+                        var offset= $target.data('offset');     
+                        
+                        var val = $target.offset().top ;
+                        if(val > 2 * offset ){
+                            val -= offset;
+                        }
+
+                       $('.anchor-section').css('min-height', '10px');
+                        
+                        /*
+                        if($target && $target.attr('id') !== "top"){
+                            $target.css('min-height', windowHeight);
+                        }*/
+
+                        
+                        $('html, body').animate({
+                            scrollTop: val,
+                            minHeight:windowHeight
+                        }, speed,'easeInOutQuad');
+
+                         
+                        
+                        
+                    });                    
+                }
+            )();</script><section><div class="main-container"><div class="jumbo-bar"><div class="jumbo-container"><div class="jumbo-pict"></div><div class="jumbo-description col-lg-6 col-lg-offset-6"><div class="jumbo-description-container"><div class="jumbo-description-padding"><div class="jumbo-description-text"><h1>Boostez votre champion<br>Soutenez-le pour qu'il vive à 100% de sa passion.</h1></div><div class="subscribe-newsletter form-inline"><br><h4><p>Soyez informés dès l'ouverture de la plateforme</p></h4><div class="form-group" id="nl-form"><input type="email" class="form-control" name="email" placeholder="Saisissez votre email ..." value=""> <input type="button" class="btn btn-info button action" id="email-button" value="Je m'inscris !"></div></div></div></div></div></div></div></div><script type="text/javascript">(
+                    function(window, undefined, $){
+                        var $form = $('#nl-form'),
+                            $btn = $('#email-button'), 
+                            $email=$('input[name="email"]');
+                        $btn.on('click',function(){
+                             var link = "mailto:hello@feedmysport.com"
+                                        + "&subject=" + escape("Inscription courriel")
+                                        + "&body=" + escape("Je souhaite suivre l'aventure www.feedmysport.com.'")
+                                ;
+
+                            window.location.href = link;   
+                        });  
+                    }    
+                )(window,undefined,$);</script></section><section style="margin-bottom:70px"><section id="what" data-offset="50" class="container what anchor-section"><div class="title row"><h3 class="text-center">Le Concept</h3><div class="text-center"><p>Faites partie de la vie de vos sportifs favoris. En devenant mécène, vous pourriez aider vos sportifs à vivre de leur sport.</p></div></div><div><div class="bullet-container row"><div class="bullet col-lg-5 text-center"><i class="fms fms-search fms-5x"></i><div class="thumbnail-subtitle"><span class="pill">1</span><div class="title">Choisissez l'athlète que vous souhaitez soutenir</div></div></div><div class="bullet col-lg-5 col-lg-offset-2 text-center"><i class="fms fms-money fms-5x"></i><div class="thumbnail-subtitle"><span class="pill">2</span><div class="title">Devenez son mécène</div></div></div></div><div class="bullet-container row"><div class="bullet col-lg-5 text-center"><i class="fms fms-bicycle fms-5x"></i><div class="thumbnail-subtitle"><span class="pill">3</span><div class="title">Feedmysport se charge de lui transmettre votre don</div></div></div><div class="bullet col-lg-5 col-lg-offset-2 text-center"><i class="fms fms-tachometer fms-5x"></i><div class="thumbnail-subtitle"><span class="pill">4</span><div class="title">Suivez ses performances</div></div></div></div></div></section><section id="whatsup" data-offset="30" class="container-fluid whatsup anchor-section"><div class="title row"><h3 class="text-center">L'Actualité</h3></div><div class="social-container container"><div class="feed-row row"><div class="social-feed center-block facebook col-lg-6"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffeedmysport%2F&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=200280557076971" width="585" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><div class="social-feed center-block twitter col-lg-6 col-md-6"><div><a class="twitter-timeline" data-width="585" data-height="500" href="https://twitter.com/feedmysport">Tweets by feedmysport</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div></div></div></div></section><section id="who" data-offset="80" class="who anchor-section container-fluid"><div class="title text-center"><h3>La Team</h3></div><div class="team-container container"><div class="row"><div class="col-lg-6"><div class="team-item center-block"><div class="team-civ row"><div class="team-pict col-lg-4"><img src="content/images/001.jpg" class="col-lg-12"></div><div class="team-info col-lg-6"><div class="row"><label>Prénom&nbsp;:&nbsp;</label><span>Angèle</span></div><div class="row"><label>Qui suis-je&nbsp;:&nbsp;</label><span>Fondatrice</span></div><div class="row"><label>Mes Sports&nbsp;:&nbsp;</label><p>Danse classique, running, aviron, équitation, tennis</p></div><div class="row"><label>Fréquence&nbsp;:&nbsp;</label><span>3 fois/semaine</span></div></div></div><br><div class="team-desc"><div><p></p><blockquote><i>"Le sport ne forge pas le caractère. Il le révèle."</i><br><span style="padding-left:25px; font-size:14px">__Heywood Hale Broun</span></blockquote><p></p></div></div></div></div><div class="col-lg-6"><div class="team-item center-block"><div class="team-civ row"><div class="team-pict col-lg-4"><img src="content/images/002.jpg" class="col-lg-12"></div><div class="team-info col-lg-6"><div class="row"><label>Prénom&nbsp;:&nbsp;</label><span>Yoann</span></div><div class="row"><label>Qui suis-je&nbsp;:&nbsp;</label><span>Fondateur</span></div><div class="row"><label>Mes Sports&nbsp;:&nbsp;</label><p>Ski, Tennis, E-Sport, Hockey, Football américain</p></div><div class="row"><label>Fréquence&nbsp;:&nbsp;</label><span>quand cela m'est possible</span></div></div></div><br><div class="team-desc"><div><p></p><blockquote><i>"Les hommes se transmettent la vie comme les coureurs se passent le flambeau."</i><br><span style="padding-left:25px; font-size:14px">__Lucrèce</span></blockquote><p></p></div></div></div></div></div></div></section></section><footer class="container-fluid">&copy;FeedMySport - 2016</footer></body></html>

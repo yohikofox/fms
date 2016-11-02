@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         {{> _facebook}}            
         <title>FeedMySport.com</title>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" ><link>
-           <link rel="stylesheet" href="../../dist/picto.min.css" type="text/css" inline ></link>
-           <link rel="stylesheet" href="../../dist/style.min.css" type="text/css" inline ></link>
-        
-      
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-    <script  src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-  </head>     
+        <link rel="stylesheet" href="../../dist/picto.min.css" type="text/css" inline ></link>
+        <link rel="stylesheet" href="../../dist/hero.min.css" type="text/css" inline ></link>
+        <link rel="stylesheet" href="dist/app.min.css" type="text/css" ></link>
+        <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <script  src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    </head>     
     <body>    
-        <header id="top">
-            {{> _nav}}   
-            <script type="text/javascript">
+        {{> _nav}}    
+        <script type="text/javascript">
             (
                 function(){
                     $('ul.nav li a:not(".image-link")').on('click', function(e){
@@ -56,17 +51,16 @@
                     });                    
                 }
             )();
-        </script>            
-        </header>
+        </script>    
         <section >
-
-            <div class="jumbo-bar container-fluid">               
-                <div class="jumbo-container container">                   
+            <div class="main-container">
+            <div class="jumbo-bar">               
+                <div class="jumbo-container">                   
                     {{> _jumboPict}}   
                     {{> _jumboDescription}}
                 </div>
             </div>            
-                    
+            </div>         
             <script type="text/javascript">
                 (
                     function(window, undefined, $){
@@ -85,13 +79,13 @@
                 )(window,undefined,$);
             </script>   
         </section>      
-        <section style=" container margin-bottom:70px;"> 
+        <section style="margin-bottom:70px;"> 
             {{> _sectionWhat}} 
             {{> _sectionWhatsup}} 
             {{> _sectionWho}}         
         </section>
-        {{> _footer}}   
-       
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   </body>    
+        <footer class="container-fluid"> 
+            	&copy;FeedMySport - 2016
+        </footer>   
+    </body>    
 </html>

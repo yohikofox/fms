@@ -27,6 +27,7 @@ $padding-base-horizontal:              12px !default;
 $base-body-width:                    1170px !default;
 $border-radius-base:                    4px !default;
 $btn-font-weight:                      16px !default;                
+$header-height:                       470px !default; 
 
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
@@ -78,3 +79,6 @@ $nav-pills-active-link-hover-bg:            $component-active-bg !default;
 $nav-pills-active-link-hover-color:         $component-active-color !default;
 
 
+$blockquote-font-size:        ($font-size-base * 1.25) !default;
+//** Blockquote border color
+$blockquote-border-color:     $fms-gray-lighter;
