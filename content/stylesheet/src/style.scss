@@ -35,6 +35,9 @@ body {
             @media screen and (max-width: $screen-sm-max) {
                 font-size: 2.1em;
             }
+            @media screen and (max-width: $screen-xs-max) {
+                font-size: 1.5em;
+            }
         }
         .jumbo-description-container {
             display: table-cell;
@@ -49,11 +52,12 @@ body {
             }
             #nl-form {
                 // display: inline-block;
-                input[type="email"],
                 input[type="button"] {
-                    @media screen and(max-width: $screen-sm-max) {
-                        width: 50%;
-                        display: inline-block;
+                    @media screen and(max-width: $screen-xs-max) {
+                        margin-top: 10px;
+                        width: 100%;
+                        // display: inline-block;
+                        // position: relative;
                     }
                 }
             }
@@ -122,13 +126,13 @@ body {
 
 .who {
     background-color: #e8e8e8;
-    min-height: 450px;
+    min-height: 550px;
 }
 
 .team-item {
     background-color: #fff;
     border: 1px solid #d6d6d6;
-    min-height: 320px;
+    min-height: 370px;
     padding: 12px;
 }
 

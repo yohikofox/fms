@@ -51,6 +51,9 @@ body {
       @media screen and (max-width: 991px) {
         .jumbo-bar .jumbo-description h1 {
           font-size: 2.1em; } }
+      @media screen and (max-width: 767px) {
+        .jumbo-bar .jumbo-description h1 {
+          font-size: 1.5em; } }
     .jumbo-bar .jumbo-description .jumbo-description-container {
       display: table-cell;
       vertical-align: middle; }
@@ -64,11 +67,10 @@ body {
         box-shadow: 5px 5px 32px #111;
         filter: progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=134, Strength=5);
         color: #fff; }
-      @media screen and (max-width: 991px) {
-        .jumbo-bar .jumbo-description .jumbo-description-container #nl-form input[type="email"],
+      @media screen and (max-width: 767px) {
         .jumbo-bar .jumbo-description .jumbo-description-container #nl-form input[type="button"] {
-          width: 50%;
-          display: inline-block; } }
+          margin-top: 10px;
+          width: 100%; } }
 
 .pill {
   background-color: #444;
@@ -109,12 +111,12 @@ body {
 
 .who {
   background-color: #e8e8e8;
-  min-height: 450px; }
+  min-height: 550px; }
 
 .team-item {
   background-color: #fff;
   border: 1px solid #d6d6d6;
-  min-height: 320px;
+  min-height: 370px;
   padding: 12px; }
 
 .team-container {
