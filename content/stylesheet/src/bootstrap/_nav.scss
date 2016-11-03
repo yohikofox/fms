@@ -1,22 +1,23 @@
-.navbar{
+.navbar {
     background-color: $fms-white-color;
-    a{
-        color:#000;
+    .icon-bar { 
+        background-color: #000;
+    }
+    a {
+        color: #000;
         font-size: 1.5em;
         font-weight: bold;
-
-        &:hover{
-            background-color:$fms-white-color !important;
-            color:#000 !important;
+        &:hover {
+            background-color: $fms-white-color !important;
+            color: #000 !important;
         }
     }
-
-    @include shadow-box(0px 1px 3px 0px, $fms-gray-light-medium);    
-    .active{
+    @include shadow-box(0px 1px 3px 0px, $fms-gray-light-medium);
+    .active {
         background-color: $fms-white-color;
     }
-
-    .navbar-header, .navbar-nav{
-        padding-top:5px;
+    .navbar-header,
+    .navbar-nav {
+        padding-top: 5px;
     }
 }

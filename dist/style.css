@@ -15,6 +15,8 @@ body {
   -o-box-shadow: 0px 1px 3px 0px #787878;
   box-shadow: 0px 1px 3px 0px #787878;
   filter: progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=134, Strength=5); }
+  .navbar .icon-bar {
+    background-color: #000; }
   .navbar a {
     color: #000;
     font-size: 1.5em;
@@ -24,7 +26,8 @@ body {
       color: #000 !important; }
   .navbar .active {
     background-color: #fff; }
-  .navbar .navbar-header, .navbar .navbar-nav {
+  .navbar .navbar-header,
+  .navbar .navbar-nav {
     padding-top: 5px; }
 
 .jumbo-container {
@@ -37,14 +40,17 @@ body {
   background-repeat: no-repeat;
   margin-top: -20px;
   height: 470px; }
+  @media screen and (max-width: 1199px) {
+    .jumbo-bar {
+      background-size: auto 100%; } }
   .jumbo-bar .jumbo-description {
     display: table;
     height: 100%; }
     .jumbo-bar .jumbo-description h1 {
       font-size: 3.5em; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 991px) {
         .jumbo-bar .jumbo-description h1 {
-          font-size: 1.7em; } }
+          font-size: 2.1em; } }
     .jumbo-bar .jumbo-description .jumbo-description-container {
       display: table-cell;
       vertical-align: middle; }
@@ -58,6 +64,11 @@ body {
         box-shadow: 5px 5px 32px #111;
         filter: progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=134, Strength=5);
         color: #fff; }
+      @media screen and (max-width: 991px) {
+        .jumbo-bar .jumbo-description .jumbo-description-container #nl-form input[type="email"],
+        .jumbo-bar .jumbo-description .jumbo-description-container #nl-form input[type="button"] {
+          width: 50%;
+          display: inline-block; } }
 
 .pill {
   background-color: #444;
@@ -81,7 +92,8 @@ body {
     font-size: 2.5em; }
   .title p {
     font-size: 1.3em; }
-  .title h3, .title p {
+  .title h3,
+  .title p {
     text-align: center;
     font-weight: bold; }
 
@@ -102,11 +114,14 @@ body {
 .team-item {
   background-color: #fff;
   border: 1px solid #d6d6d6;
-  height: 320px;
+  min-height: 320px;
   padding: 12px; }
 
 .team-container {
-  height: 400px; }
+  min-height: 400px;
+  padding-bottom: 20px; }
+  .team-container .row > div {
+    padding-bottom: 20px; }
 
 footer {
   height: 200px;
@@ -115,5 +130,10 @@ footer {
     color: #fff; }
   footer .footer-center {
     display: flex; }
+
+.medium-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*# sourceMappingURL=style.css.map */
